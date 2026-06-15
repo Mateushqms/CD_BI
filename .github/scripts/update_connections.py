@@ -73,7 +73,23 @@ def drive_root(token: str) -> str:
     return f"{GRAPH}/me/drive/root:"
 
 
-def sharing_url_to_download(web_url: str) -> str:
+def resolve_download_url(web_url: str) -> str:
+    """Segue o redirect do link de compartilhamento e retorna a URL de download direto.
+
+    O link de compartilhamento (1drv.ms) redireciona para onedrive.live.com/?authkey=...
+    Trocando o path para /download obtemos uma URL permanente de download direto,
+    que o Power BI acessa anonimamente sem precisar de credenciais extras.
+    """
+    try:
+        resp = requests.get(web_url, allow_redirects=True, timeout=15, stream=True)
+        resp.close()
+        final_url = resp.url
+        if "onedrive.live.com" in final_url and "?" in final_url:
+            query = final_url.split("?", 1)[1]
+            return f"https://onedrive.live.com/download?{query}"
+    except requests.RequestException as e:
+        print(f"  AVISO: não foi possível resolver URL direta ({e}).", file=sys.stderr)
+    # Fallback: codificação via api.onedrive.com
     encoded = base64.urlsafe_b64encode(web_url.encode()).rstrip(b"=").decode()
     return f"https://api.onedrive.com/v1.0/shares/u!{encoded}/root/content"
 
@@ -100,7 +116,7 @@ def create_sharing_link(token: str, filename: str) -> str:
     resp.raise_for_status()
 
     web_url = resp.json()["link"]["webUrl"]
-    return sharing_url_to_download(web_url)
+    return resolve_download_url(web_url)
 
 
 def extract_filenames(content: str) -> list[str]:
