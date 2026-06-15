@@ -26,9 +26,7 @@ jobs:
 
       - name: Upload PBIP to OneDrive
         env:
-          TENANT_ID: ${{ secrets.TENANT_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          ONEDRIVE_USER_ID: ${{ secrets.ONEDRIVE_USER_ID }}
+          ONEDRIVE_REFRESH_TOKEN: ${{ secrets.ONEDRIVE_REFRESH_TOKEN }}
           ONEDRIVE_FOLDER_PATH: ${{ vars.ONEDRIVE_FOLDER_PATH || 'PBIP_Deploy' }}
-        run: python .github/scripts/upload_to_onedrive.py
+        run: python .github/scripts/upload_personal.py
