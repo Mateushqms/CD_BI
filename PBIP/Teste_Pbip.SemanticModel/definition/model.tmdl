@@ -1,0 +1,26 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["empenhos_tesouro_parlamentares_202603131059 (1)","india_cancer_patients_2022_2025","student-mat","transport-january-2026-csv"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.146.1454.0 (25.08)+901d6c338d1dea81ac3e53073ffb10469f0f37b8
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'empenhos_tesouro_parlamentares_202603131059 (1)'
+ref table DateTableTemplate_4e081eea-4feb-40fd-8968-aa1a50e37e4c
+ref table LocalDateTable_34b3630e-cbbe-4bcd-a401-3675707df0a3
+ref table india_cancer_patients_2022_2025
+ref table LocalDateTable_fd05829d-a92c-4f60-aefe-c86f641de141
+ref table student-mat
+ref table transport-january-2026-csv
+
+ref cultureInfo pt-BR
+

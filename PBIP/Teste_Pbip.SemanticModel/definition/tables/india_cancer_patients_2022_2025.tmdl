@@ -1,0 +1,121 @@
+table india_cancer_patients_2022_2025
+	lineageTag: 6bca9a4d-38d8-4f04-ac33-58403f43e5af
+
+	column Patient_ID
+		dataType: string
+		lineageTag: a3b2d9a0-182a-4f8c-93ad-444822272e0a
+		summarizeBy: none
+		sourceColumn: Patient_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 97bfc7c9-07ba-4bea-b517-0ff38dcfc424
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 68a81883-069e-4467-935e-694a66a02ca8
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 17df0550-2c65-4ec4-b4b9-619fedf28b8c
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 31d597bc-80c3-4fa7-bbe9-a2437278575f
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hospital_Name
+		dataType: string
+		lineageTag: b66d528c-0e52-4b8d-b389-c1996b53af51
+		summarizeBy: none
+		sourceColumn: Hospital_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cancer_Type
+		dataType: string
+		lineageTag: e22858ab-be77-4266-b106-ecdf9ff832dd
+		summarizeBy: none
+		sourceColumn: Cancer_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stage
+		dataType: string
+		lineageTag: f571f236-b200-4cf3-9d0e-28b5f04008d0
+		summarizeBy: none
+		sourceColumn: Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Treatment_Type
+		dataType: string
+		lineageTag: c51ba790-abe8-447e-82ea-9955d04aa67d
+		summarizeBy: none
+		sourceColumn: Treatment_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Diagnosis_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 677b91fe-7c96-4d0b-bf0e-156398ad19cd
+		summarizeBy: none
+		sourceColumn: Diagnosis_Date
+
+		variation Variation
+			isDefault
+			relationship: ab58b8c3-17c6-482a-9ac2-8e5a9eb94404
+			defaultHierarchy: LocalDateTable_fd05829d-a92c-4f60-aefe-c86f641de141.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Survival_Months
+		dataType: int64
+		formatString: 0
+		lineageTag: d382b325-2e0e-4454-a42f-69f71ffdc0d1
+		summarizeBy: sum
+		sourceColumn: Survival_Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: f018b73d-4c15-441e-bd5e-d318891d2cc7
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition india_cancer_patients_2022_2025 = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\msousa\Desktop\india_cancer_patients_2022_2025.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Patient_ID", type text}, {"Age", Int64.Type}, {"Gender", type text}, {"State", type text}, {"City", type text}, {"Hospital_Name", type text}, {"Cancer_Type", type text}, {"Stage", type text}, {"Treatment_Type", type text}, {"Diagnosis_Date", type date}, {"Survival_Months", Int64.Type}, {"Status", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+

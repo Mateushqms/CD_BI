@@ -1,0 +1,235 @@
+table 'empenhos_tesouro_parlamentares_202603131059 (1)'
+	lineageTag: a8a02ca4-4a93-47c2-a840-93d13ad872db
+
+	column programa_governo
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e293dd6-3235-4d18-8880-98d8491cd7e4
+		summarizeBy: sum
+		sourceColumn: programa_governo
+
+		annotation SummarizationSetBy = Automatic
+
+	column programa_governo_descricao
+		dataType: string
+		lineageTag: 134e4a87-1101-4ec0-8cf6-03e52972c8ca
+		summarizeBy: none
+		sourceColumn: programa_governo_descricao
+
+		annotation SummarizationSetBy = Automatic
+
+	column acao_governo
+		dataType: string
+		lineageTag: 3e9cea6f-79ec-40ac-9ec5-01424deecde6
+		summarizeBy: none
+		sourceColumn: acao_governo
+
+		annotation SummarizationSetBy = Automatic
+
+	column acao_governo_descricao
+		dataType: string
+		lineageTag: 4d93d767-dab4-4221-b323-112f67fb57c6
+		summarizeBy: none
+		sourceColumn: acao_governo_descricao
+
+		annotation SummarizationSetBy = Automatic
+
+	column emissao_mes
+		dataType: string
+		lineageTag: 41d6ecd6-0858-4c8c-95de-0b499ae946cc
+		summarizeBy: none
+		sourceColumn: emissao_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column emissao_dia
+		dataType: string
+		lineageTag: 5d2775b4-dc56-44a2-b4fc-89f51fa33671
+		summarizeBy: none
+		sourceColumn: emissao_dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column ne_ccor
+		dataType: string
+		lineageTag: 1a2dc82f-5516-41ac-b912-6c138de4604a
+		summarizeBy: none
+		sourceColumn: ne_ccor
+
+		annotation SummarizationSetBy = Automatic
+
+	column ne_num_processo
+		dataType: string
+		lineageTag: 2aa63aee-0045-48d5-9733-b4d07ca99404
+		summarizeBy: none
+		sourceColumn: ne_num_processo
+
+		annotation SummarizationSetBy = Automatic
+
+	column ne_info_complementar
+		dataType: string
+		lineageTag: c60b42fd-8c04-4852-a852-b50d8a06d3e8
+		summarizeBy: none
+		sourceColumn: ne_info_complementar
+
+		annotation SummarizationSetBy = Automatic
+
+	column ne_ccor_descricao
+		dataType: string
+		lineageTag: 91492910-a168-42dd-b74b-cc2f27db5b8c
+		summarizeBy: none
+		sourceColumn: ne_ccor_descricao
+
+		annotation SummarizationSetBy = Automatic
+
+	column doc_observacao
+		dataType: string
+		lineageTag: 13dfd2c2-2819-44a9-85c4-72b7cb4d2569
+		summarizeBy: none
+		sourceColumn: doc_observacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column natureza_despesa
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c28ece6-def4-4d4e-846e-a1fea29caa86
+		summarizeBy: sum
+		sourceColumn: natureza_despesa
+
+		annotation SummarizationSetBy = Automatic
+
+	column natureza_despesa_descricao
+		dataType: string
+		lineageTag: 553fe415-3459-44fc-96b2-1a00b37f927c
+		summarizeBy: none
+		sourceColumn: natureza_despesa_descricao
+
+		annotation SummarizationSetBy = Automatic
+
+	column ne_ccor_favorecido
+		dataType: string
+		lineageTag: a311b076-2219-44c8-b60f-84e4a36ceda0
+		summarizeBy: none
+		sourceColumn: ne_ccor_favorecido
+
+		annotation SummarizationSetBy = Automatic
+
+	column ne_ccor_favorecido_descricao
+		dataType: string
+		lineageTag: 8e8604ed-0b12-4722-80e9-4813f4cb3d64
+		summarizeBy: none
+		sourceColumn: ne_ccor_favorecido_descricao
+
+		annotation SummarizationSetBy = Automatic
+
+	column ne_ccor_ano_emissao
+		dataType: int64
+		formatString: 0
+		lineageTag: 7dc6e4c1-6b2d-402b-861f-de975a87b27e
+		summarizeBy: sum
+		sourceColumn: ne_ccor_ano_emissao
+
+		annotation SummarizationSetBy = Automatic
+
+	column ptres
+		dataType: int64
+		formatString: 0
+		lineageTag: aa47f483-4760-41d6-bbf6-a444f5e7da52
+		summarizeBy: sum
+		sourceColumn: ptres
+
+		annotation SummarizationSetBy = Automatic
+
+	column fonte_recursos_detalhada
+		dataType: string
+		lineageTag: 7eea599d-d1d9-43cd-96a7-641e3ebbca6c
+		summarizeBy: none
+		sourceColumn: fonte_recursos_detalhada
+
+		annotation SummarizationSetBy = Automatic
+
+	column fonte_recursos_detalhada_descricao
+		dataType: string
+		lineageTag: 25f455b7-71b3-4ddc-b823-d5738a36d8ca
+		summarizeBy: none
+		sourceColumn: fonte_recursos_detalhada_descricao
+
+		annotation SummarizationSetBy = Automatic
+
+	column despesas_empenhadas
+		dataType: double
+		lineageTag: 6b4cb001-2f76-4080-aa08-c34d56a4aa28
+		summarizeBy: sum
+		sourceColumn: despesas_empenhadas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column despesas_liquidadas
+		dataType: double
+		lineageTag: 0b837eed-37b6-4038-8324-54da48a7a21e
+		summarizeBy: sum
+		sourceColumn: despesas_liquidadas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column despesas_pagas
+		dataType: double
+		lineageTag: d6a5658e-b2e0-4630-a7da-a1cba7ca9602
+		summarizeBy: sum
+		sourceColumn: despesas_pagas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column restos_a_pagar_inscritos
+		dataType: double
+		lineageTag: 88fc1741-4fc5-4283-87f9-5a819c6945a5
+		summarizeBy: sum
+		sourceColumn: restos_a_pagar_inscritos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column restos_a_pagar_pagos
+		dataType: double
+		lineageTag: eeef40b4-f9aa-4a6c-b398-b18b1b68d168
+		summarizeBy: sum
+		sourceColumn: restos_a_pagar_pagos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dt_ingest
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e5be73d8-5f4f-40a6-bd7d-ae78f02f1f55
+		summarizeBy: none
+		sourceColumn: dt_ingest
+
+		variation Variation
+			isDefault
+			relationship: 2048afa3-07fa-43f5-8723-77e399d52e6e
+			defaultHierarchy: LocalDateTable_34b3630e-cbbe-4bcd-a401-3675707df0a3.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'empenhos_tesouro_parlamentares_202603131059 (1)' = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\msousa\Downloads\empenhos_tesouro_parlamentares_202603131059 (1).csv"),[Delimiter=",", Columns=25, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"programa_governo", Int64.Type}, {"programa_governo_descricao", type text}, {"acao_governo", type text}, {"acao_governo_descricao", type text}, {"emissao_mes", type text}, {"emissao_dia", type text}, {"ne_ccor", type text}, {"ne_num_processo", type text}, {"ne_info_complementar", type text}, {"ne_ccor_descricao", type text}, {"doc_observacao", type text}, {"natureza_despesa", Int64.Type}, {"natureza_despesa_descricao", type text}, {"ne_ccor_favorecido", type text}, {"ne_ccor_favorecido_descricao", type text}, {"ne_ccor_ano_emissao", Int64.Type}, {"ptres", Int64.Type}, {"fonte_recursos_detalhada", type text}, {"fonte_recursos_detalhada_descricao", type text}, {"despesas_empenhadas", type number}, {"despesas_liquidadas", type number}, {"despesas_pagas", type number}, {"restos_a_pagar_inscritos", type number}, {"restos_a_pagar_pagos", type number}, {"dt_ingest", type datetime}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+

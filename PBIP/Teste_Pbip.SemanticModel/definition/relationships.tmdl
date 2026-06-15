@@ -1,0 +1,10 @@
+relationship 2048afa3-07fa-43f5-8723-77e399d52e6e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'empenhos_tesouro_parlamentares_202603131059 (1)'.dt_ingest
+	toColumn: LocalDateTable_34b3630e-cbbe-4bcd-a401-3675707df0a3.Date
+
+relationship ab58b8c3-17c6-482a-9ac2-8e5a9eb94404
+	joinOnDateBehavior: datePartOnly
+	fromColumn: india_cancer_patients_2022_2025.Diagnosis_Date
+	toColumn: LocalDateTable_fd05829d-a92c-4f60-aefe-c86f641de141.Date
+

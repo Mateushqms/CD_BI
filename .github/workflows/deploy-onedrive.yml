@@ -1,0 +1,34 @@
+name: Deploy PBIP to OneDrive
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'PBIP/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Upload PBIP to OneDrive
+        env:
+          TENANT_ID: ${{ secrets.TENANT_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          ONEDRIVE_USER_ID: ${{ secrets.ONEDRIVE_USER_ID }}
+          ONEDRIVE_FOLDER_PATH: ${{ vars.ONEDRIVE_FOLDER_PATH || 'PBIP_Deploy' }}
+        run: python .github/scripts/upload_to_onedrive.py

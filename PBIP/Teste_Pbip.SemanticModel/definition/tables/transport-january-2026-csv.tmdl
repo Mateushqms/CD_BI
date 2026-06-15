@@ -1,0 +1,130 @@
+table transport-january-2026-csv
+	lineageTag: 4bd76310-3b0d-4648-b875-96b30160d21a
+
+	column Series_reference
+		dataType: string
+		lineageTag: a7728261-fab8-45f3-93f0-bb2cead2550b
+		summarizeBy: none
+		sourceColumn: Series_reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: int64
+		formatString: 0
+		lineageTag: 84fc350c-f7c9-4e34-ba60-aff72a2096dd
+		summarizeBy: sum
+		sourceColumn: Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_value
+		dataType: int64
+		formatString: 0
+		lineageTag: 4738b229-3793-4fc6-bb39-10a79896aa85
+		summarizeBy: sum
+		sourceColumn: Data_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Suppressed
+		dataType: string
+		lineageTag: 14c60c5f-c782-4788-b467-e323f0b7fa45
+		summarizeBy: none
+		sourceColumn: Suppressed
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		lineageTag: 822eea1e-2dd8-4f54-983d-d45ff082f95d
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNITS
+		dataType: string
+		lineageTag: 02b94fe5-e90e-4019-8316-303e8b3c5f02
+		summarizeBy: none
+		sourceColumn: UNITS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Magnitude
+		dataType: int64
+		formatString: 0
+		lineageTag: e1814eb4-6e1b-45cf-a69b-80e9728fad76
+		summarizeBy: sum
+		sourceColumn: Magnitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subject
+		dataType: string
+		lineageTag: ad40b71b-0516-4130-8a94-01db55c5208d
+		summarizeBy: none
+		sourceColumn: Subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column Group
+		dataType: string
+		lineageTag: c583f6f3-7425-4314-be2d-b2c8bbef7234
+		summarizeBy: none
+		sourceColumn: Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Series_title_1
+		dataType: string
+		lineageTag: fb47d7a7-67db-472d-940f-19c5c336a48a
+		summarizeBy: none
+		sourceColumn: Series_title_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Series_title_2
+		dataType: string
+		lineageTag: 71da3a91-270c-4e68-8503-c1de81a33d9c
+		summarizeBy: none
+		sourceColumn: Series_title_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Series_title_3
+		dataType: string
+		lineageTag: 34fe063d-18a2-40a9-9b51-3e0e4c27c6e9
+		summarizeBy: none
+		sourceColumn: Series_title_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Series_title_4
+		dataType: string
+		lineageTag: 5f5fe702-0eec-4a8b-a88e-963ad5f621a9
+		summarizeBy: none
+		sourceColumn: Series_title_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Series_title_5
+		dataType: string
+		lineageTag: 8c4f3d8b-ac67-4718-8abf-fac219912c57
+		summarizeBy: none
+		sourceColumn: Series_title_5
+
+		annotation SummarizationSetBy = Automatic
+
+	partition transport-january-2026-csv = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\msousa\Desktop\transport-january-2026-csv.csv"),[Delimiter=",", Columns=14, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Series_reference", type text}, {"Period", Int64.Type}, {"Data_value", Int64.Type}, {"Suppressed", type text}, {"STATUS", type text}, {"UNITS", type text}, {"Magnitude", Int64.Type}, {"Subject", type text}, {"Group", type text}, {"Series_title_1", type text}, {"Series_title_2", type text}, {"Series_title_3", type text}, {"Series_title_4", type text}, {"Series_title_5", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+

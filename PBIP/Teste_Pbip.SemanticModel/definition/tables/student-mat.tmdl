@@ -1,0 +1,295 @@
+table student-mat
+	lineageTag: 5ddd8187-41f2-4f38-bcd0-0dcdb657b717
+
+	column school
+		dataType: string
+		lineageTag: 7c47dd99-d0a4-4470-82ac-3e0a7a4bf824
+		summarizeBy: none
+		sourceColumn: school
+
+		annotation SummarizationSetBy = Automatic
+
+	column sex
+		dataType: string
+		lineageTag: 924c4f4d-3102-4b16-8dd2-a6f8121a9779
+		summarizeBy: none
+		sourceColumn: sex
+
+		annotation SummarizationSetBy = Automatic
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 024131e0-f560-4240-9f0f-da5e074efd31
+		summarizeBy: sum
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column address
+		dataType: string
+		lineageTag: 638a4791-c541-4c89-bc41-26c486bb8380
+		summarizeBy: none
+		sourceColumn: address
+
+		annotation SummarizationSetBy = Automatic
+
+	column famsize
+		dataType: string
+		lineageTag: 633b9c13-3fa5-4fb5-b8e6-6da49fc321f4
+		summarizeBy: none
+		sourceColumn: famsize
+
+		annotation SummarizationSetBy = Automatic
+
+	column Parrent_status
+		dataType: string
+		lineageTag: 0231b653-fece-4029-99ca-40fde2c8fae4
+		summarizeBy: none
+		sourceColumn: Parrent_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mother_edu
+		dataType: int64
+		formatString: 0
+		lineageTag: b405dc93-cced-4a98-a4ab-1dbbd10e34a5
+		summarizeBy: sum
+		sourceColumn: Mother_edu
+
+		annotation SummarizationSetBy = Automatic
+
+	column Father_edu
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cf76b5d-f33c-44b1-a30f-adbb411c69bf
+		summarizeBy: sum
+		sourceColumn: Father_edu
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mother_job
+		dataType: string
+		lineageTag: f4b4a5fb-f251-451a-8f13-63d232e06ae7
+		summarizeBy: none
+		sourceColumn: Mother_job
+
+		annotation SummarizationSetBy = Automatic
+
+	column Father_job
+		dataType: string
+		lineageTag: 3b337a03-04fa-41e0-941f-7f327451f28e
+		summarizeBy: none
+		sourceColumn: Father_job
+
+		annotation SummarizationSetBy = Automatic
+
+	column reason_to_chose_school
+		dataType: string
+		lineageTag: 757afed2-d625-4be8-bd1a-b4ac2bf3fc12
+		summarizeBy: none
+		sourceColumn: reason_to_chose_school
+
+		annotation SummarizationSetBy = Automatic
+
+	column guardian
+		dataType: string
+		lineageTag: fa8dd505-4b2e-454b-bd8c-18aaae443569
+		summarizeBy: none
+		sourceColumn: guardian
+
+		annotation SummarizationSetBy = Automatic
+
+	column traveltime
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d8bd886-7d69-4e8b-b52e-fc33cbe4b0ea
+		summarizeBy: sum
+		sourceColumn: traveltime
+
+		annotation SummarizationSetBy = Automatic
+
+	column weekly_studytime
+		dataType: int64
+		formatString: 0
+		lineageTag: 3341f246-a177-48b1-b76a-9f706e1898f3
+		summarizeBy: sum
+		sourceColumn: weekly_studytime
+
+		annotation SummarizationSetBy = Automatic
+
+	column failures
+		dataType: int64
+		formatString: 0
+		lineageTag: db1103d5-6c06-45e5-acaf-9b6ff11aba9f
+		summarizeBy: sum
+		sourceColumn: failures
+
+		annotation SummarizationSetBy = Automatic
+
+	column extra_edu_supp
+		dataType: string
+		lineageTag: 186aa78c-af7a-4c57-8022-0710ac08a21a
+		summarizeBy: none
+		sourceColumn: extra_edu_supp
+
+		annotation SummarizationSetBy = Automatic
+
+	column family_edu_supp
+		dataType: string
+		lineageTag: 5015732a-255d-4c55-b50a-ba5c228960a9
+		summarizeBy: none
+		sourceColumn: family_edu_supp
+
+		annotation SummarizationSetBy = Automatic
+
+	column extra_paid_class
+		dataType: string
+		lineageTag: 11028a0d-e371-4a9f-8d44-19675095ca81
+		summarizeBy: none
+		sourceColumn: extra_paid_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column extra_curr_activities
+		dataType: string
+		lineageTag: 16583e0d-26ff-455a-8fc0-e868ddc708ba
+		summarizeBy: none
+		sourceColumn: extra_curr_activities
+
+		annotation SummarizationSetBy = Automatic
+
+	column nursery
+		dataType: string
+		lineageTag: c118764c-6125-4549-aaf7-99ae39dd2f13
+		summarizeBy: none
+		sourceColumn: nursery
+
+		annotation SummarizationSetBy = Automatic
+
+	column Interested_in_higher_edu
+		dataType: string
+		lineageTag: 8dba06c1-d4bd-4e30-8dd1-2364a5146982
+		summarizeBy: none
+		sourceColumn: Interested_in_higher_edu
+
+		annotation SummarizationSetBy = Automatic
+
+	column internet_access
+		dataType: string
+		lineageTag: a878a59e-2880-4b57-a887-0cf6c6e91416
+		summarizeBy: none
+		sourceColumn: internet_access
+
+		annotation SummarizationSetBy = Automatic
+
+	column romantic_relationship
+		dataType: string
+		lineageTag: 0f55f9cb-1c3c-4773-a65a-c1ce1f6f0faa
+		summarizeBy: none
+		sourceColumn: romantic_relationship
+
+		annotation SummarizationSetBy = Automatic
+
+	column Family_quality_reln
+		dataType: int64
+		formatString: 0
+		lineageTag: b6243418-bd5d-4084-b729-e12d5a9221be
+		summarizeBy: sum
+		sourceColumn: Family_quality_reln
+
+		annotation SummarizationSetBy = Automatic
+
+	column freetime_after_school
+		dataType: int64
+		formatString: 0
+		lineageTag: 29556e74-63a6-414d-8692-49be6d7542bd
+		summarizeBy: sum
+		sourceColumn: freetime_after_school
+
+		annotation SummarizationSetBy = Automatic
+
+	column goout_with_friends
+		dataType: int64
+		formatString: 0
+		lineageTag: 79e14d10-7dc3-46eb-96df-569ea71fc3dc
+		summarizeBy: sum
+		sourceColumn: goout_with_friends
+
+		annotation SummarizationSetBy = Automatic
+
+	column workday_alcohol_consum
+		dataType: int64
+		formatString: 0
+		lineageTag: 36cfe76c-d58e-4448-8e72-fcdde57d3a5b
+		summarizeBy: sum
+		sourceColumn: workday_alcohol_consum
+
+		annotation SummarizationSetBy = Automatic
+
+	column weekend_alcohol_consum
+		dataType: int64
+		formatString: 0
+		lineageTag: 671d6a9e-1e8e-45ed-b3fc-308ec60cf851
+		summarizeBy: sum
+		sourceColumn: weekend_alcohol_consum
+
+		annotation SummarizationSetBy = Automatic
+
+	column health_status
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a734848-1814-4fbc-9447-0aec4ab56725
+		summarizeBy: sum
+		sourceColumn: health_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column absences
+		dataType: int64
+		formatString: 0
+		lineageTag: 09895636-5ed9-4c31-a382-5b62598e24ed
+		summarizeBy: sum
+		sourceColumn: absences
+
+		annotation SummarizationSetBy = Automatic
+
+	column G1
+		dataType: int64
+		formatString: 0
+		lineageTag: cc94fd9b-de7a-4a47-a92f-f99e1e43ddbd
+		summarizeBy: sum
+		sourceColumn: G1
+
+		annotation SummarizationSetBy = Automatic
+
+	column G2
+		dataType: int64
+		formatString: 0
+		lineageTag: 7435d61c-6495-4fd5-9e94-b0c2f6ec2700
+		summarizeBy: sum
+		sourceColumn: G2
+
+		annotation SummarizationSetBy = Automatic
+
+	column G3
+		dataType: int64
+		formatString: 0
+		lineageTag: c982b9b8-2de8-4f8d-9a98-c9e45e90765a
+		summarizeBy: sum
+		sourceColumn: G3
+
+		annotation SummarizationSetBy = Automatic
+
+	partition student-mat = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\msousa\Desktop\student-mat.csv"),[Delimiter=",", Columns=33, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"school", type text}, {"sex", type text}, {"age", Int64.Type}, {"address", type text}, {"famsize", type text}, {"Parrent_status", type text}, {"Mother_edu", Int64.Type}, {"Father_edu", Int64.Type}, {"Mother_job", type text}, {"Father_job", type text}, {"reason_to_chose_school", type text}, {"guardian", type text}, {"traveltime", Int64.Type}, {"weekly_studytime", Int64.Type}, {"failures", Int64.Type}, {"extra_edu_supp", type text}, {"family_edu_supp", type text}, {"extra_paid_class", type text}, {"extra_curr_activities", type text}, {"nursery", type text}, {"Interested_in_higher_edu", type text}, {"internet_access", type text}, {"romantic_relationship", type text}, {"Family_quality_reln", Int64.Type}, {"freetime_after_school", Int64.Type}, {"goout_with_friends", Int64.Type}, {"workday_alcohol_consum", Int64.Type}, {"weekend_alcohol_consum", Int64.Type}, {"health_status", Int64.Type}, {"absences", Int64.Type}, {"G1", Int64.Type}, {"G2", Int64.Type}, {"G3", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
