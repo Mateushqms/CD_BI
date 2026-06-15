@@ -24,6 +24,13 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Update CSV connections to OneDrive URLs
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          ONEDRIVE_REFRESH_TOKEN: ${{ secrets.ONEDRIVE_REFRESH_TOKEN }}
+          ONEDRIVE_FOLDER_PATH: ${{ vars.ONEDRIVE_FOLDER_PATH || 'PBIP_Deploy' }}
+        run: python .github/scripts/update_connections.py
+
       - name: Upload PBIP to OneDrive
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
