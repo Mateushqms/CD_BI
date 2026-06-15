@@ -15,6 +15,7 @@ import os
 import base64
 import requests
 from pathlib import Path
+from urllib.parse import parse_qs, urlencode, urlparse
 
 TMDL_DIR = Path("PBIP/Teste_Pbip.SemanticModel/definition")
 FOLDER_PATH = os.environ.get("ONEDRIVE_FOLDER_PATH", "PBIP_Deploy")
@@ -74,19 +75,28 @@ def drive_root(token: str) -> str:
 
 
 def resolve_download_url(web_url: str) -> str:
-    """Segue o redirect do link de compartilhamento e retorna a URL de download direto.
+    """Segue o redirect do link de compartilhamento e retorna uma URL de download permanente.
 
-    O link de compartilhamento (1drv.ms) redireciona para onedrive.live.com/?authkey=...
-    Trocando o path para /download obtemos uma URL permanente de download direto,
-    que o Power BI acessa anonimamente sem precisar de credenciais extras.
+    O redirect inclui parâmetros de sessão (slrid, CID, _SRM) que expiram.
+    Mantém apenas sourcedoc (identifica o arquivo) e redeem (token de compartilhamento),
+    que são permanentes enquanto o link existir.
     """
     try:
         resp = requests.get(web_url, allow_redirects=True, timeout=15, stream=True)
         resp.close()
         final_url = resp.url
+
         if "onedrive.live.com" in final_url and "?" in final_url:
-            query = final_url.split("?", 1)[1]
-            return f"https://onedrive.live.com/download?{query}"
+            params = parse_qs(urlparse(final_url).query, keep_blank_values=True)
+            permanent = {}
+            if "sourcedoc" in params:
+                permanent["sourcedoc"] = params["sourcedoc"][0]
+            if "redeem" in params:
+                permanent["redeem"] = params["redeem"][0]
+            permanent["action"] = "download"
+
+            if "sourcedoc" in permanent:
+                return f"https://onedrive.live.com/download?{urlencode(permanent)}"
     except requests.RequestException as e:
         print(f"  AVISO: não foi possível resolver URL direta ({e}).", file=sys.stderr)
     # Fallback: codificação via api.onedrive.com
